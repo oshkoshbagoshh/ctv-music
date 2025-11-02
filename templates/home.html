@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+  <h2>Artists</h2>
+  <div class="grid">
+    {% for a in artists %}
+      <article class="card">
+        {% if a.image %}
+          <img class="cover" src="{{ a.image.url }}" alt="{{ a.name }}">
+        {% else %}
+          <img class="cover" src="{% static 'placeholders/artist.svg' %}" alt="No image">
+        {% endif %}
+        <h3>{{ a.name }}</h3>
+      </article>
+    {% empty %}
+      <p>No artists yet.</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section>
+  <h2>Albums</h2>
+  <div class="grid">
+    {% for al in albums %}
+      <article class="card">
+        {% if al.cover_image %}
+          <img class="cover" src="{{ al.cover_image.url }}" alt="{{ al.title }}">
+        {% else %}
+          <img class="cover" src="{% static 'placeholders/album.svg' %}" alt="No cover">
+        {% endif %}
+        <h3>{{ al.title }}</h3>
+        <p>{{ al.artist.name }}</p>
+      </article>
+    {% empty %}
+      <p>No albums yet.</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section>
+  <h2>Tracks</h2>
+  <ul>
+    {% for t in tracks %}
+      <li>{{ t.title }} — {{ t.album.title }}</li>
+    {% empty %}
+      <li>No tracks yet.</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Ad Campaigns</h2>
+  <ul>
+    {% for ad in ads %}
+      <li>{{ ad.name }}</li>
+    {% empty %}
+      <li>No ad campaigns yet.</li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

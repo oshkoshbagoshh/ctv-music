@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="100%" height="100%" fill="#eaeaea"/>
+  <rect x="60" y="40" width="280" height="220" rx="8" fill="#d8d8d8"/>
+  <circle cx="200" cy="150" r="60" fill="#cfcfcf"/>
+  <circle cx="200" cy="150" r="8" fill="#b0b0b0"/>
+  <text x="200" y="280" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#888">Album</text>
+</svg>
